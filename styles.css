@@ -1,0 +1,415 @@
+/* Import Google Fonts: Inter & JetBrains Mono */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap');
+
+:root {
+    --primary-bg: #0F172A;
+    /* Deep Slate Blue - Main background & header */
+    --card-bg: #1E293B;
+    /* Slate Navy - Cards & sections */
+    --accent-color: #0EA5E9;
+    /* Cyber Teal - Buttons, links & active states */
+    --deep-backdrop: #090D16;
+    /* Dark Blue - Outer container shading */
+    --text-color: #F8FAFC;
+    /* Ghost White - Headings, body copy */
+    --border-color: #334155;
+    /* Subtle border divider */
+}
+
+/* Global Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
+
+body {
+    background-color: var(--deep-backdrop);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Desktop Navigation Bar */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-bg);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    z-index: 1000;
+}
+
+nav p {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+nav a:hover,
+nav a:active {
+    color: var(--accent-color);
+    background-color: var(--card-bg);
+    border-color: var(--accent-color);
+}
+
+/* Main Layout Structure */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 32px 16px;
+}
+
+section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Typography Hierarchy */
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-color);
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--accent-color);
+    margin-bottom: 24px;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 24px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Card Containers */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px -2px rgba(14, 165, 233, 0.05);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 20px -2px rgba(14, 165, 233, 0.15);
+}
+
+/* Home Section Layout */
+#home {
+    text-align: left;
+}
+
+#home .section-title {
+    display: none;
+}
+
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.home-text-card {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.home-photo-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.about-me-photo {
+    width: 100%;
+    max-width: 280px; /* Keeps it from getting too large on wide desktop monitors */
+    height: auto;
+    aspect-ratio: 280 / 310; /* Maintains your original proportion */
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    object-fit: cover;
+}
+
+/* Skills Layout Grid */
+.skills-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+/* Projects & Activities Section */
+.skill-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 24px;
+}
+
+.skill-card p {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.projectphoto {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 280 / 310;
+    /* Keeps your desired proportions */
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    object-fit: cover;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projectphoto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px -2px rgba(14, 165, 233, 0.25);
+}
+
+.certphoto {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3; /* Landscape proportions for certificates */
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    object-fit: cover;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.certphoto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px -2px rgba(14, 165, 233, 0.25);
+}
+
+/* Gallery Grid Layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns on desktop */
+    gap: 1rem;
+    width: 100%;
+}
+
+.gallery-item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Hide native checkboxes */
+.modal-toggle {
+    display: none;
+}
+
+/* Thumbnail pointer style */
+.thumbnail-label {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+/* Modal Window Base State (Hidden) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dark semi-transparent backdrop */
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(9, 13, 22, 0.85);
+    cursor: pointer;
+}
+
+/* Modal Content Box */
+.modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    z-index: 2001;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    object-fit: contain;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Close Button (X) */
+.modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: var(--text-color);
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: var(--accent-color);
+}
+
+/* Trigger modal when checkbox is checked */
+.modal-toggle:checked+.thumbnail-label+.modal {
+    display: flex;
+}
+
+/* Contact Section & CTA Button */
+#contact {
+    text-align: center;
+    background-color: var(--primary-bg);
+    border-radius: 12px;
+    padding: 48px 32px;
+    border: 1px solid var(--border-color);
+    margin-top: 32px;
+}
+
+#contact h2 {
+    font-size: 24px;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+}
+
+#contact a[href^="mailto:"] {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--deep-backdrop);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 16px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#contact a[href^="mailto:"]:hover {
+    background-color: #38bdf8;
+    transform: translateY(-2px);
+}
+
+/* Consolidated Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 16px;
+        gap: 14px;
+    }
+
+    .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav a {
+        margin: 0 8px;
+        background-color: var(--card-bg);
+        border-color: var(--border-color);
+        font-size: 14px;
+        padding: 7px 18px;
+    }
+
+    .home-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    #home {
+        text-align: center;
+    }
+
+    .skills-row {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    }
+
+    /* Make the 9th (last) item span across both columns and center itself */
+    .gallery-item:last-child {
+        grid-column: 1 / -1;
+        justify-content: center;
+    }
+}
